@@ -8,4 +8,4 @@ def product_list(request):
     context = {
         'products': products
     }
-    return render(request, 'templates/plp_ecommerce/product_list.html',context)
+    return render(request, 'plp_ecommerce/product_list.html',context)
