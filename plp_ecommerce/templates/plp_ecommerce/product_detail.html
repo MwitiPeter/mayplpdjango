@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Product List</title>
+    <title>{{product.name}}</title>
 </head>
 <body>
-    <h1>Product List</h1>
     <ul>
         {% for product in products %}
         <li>
             <h2>{{ product.name }}</h2>
             <p>{{ product.description }}</p>
-            <p>Price: {{ product.price }}</p>
-            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            <p>Price: Kshs{{product.price}}</p>
+            <img src="{{ product.image.url }}" alt="{{ product.name}}">
+            <p> Available: {{product.available|yesno: "Yes,No"}}</p>
         </li>
         {% endfor %}
     </ul>
-    
+    <a href="{% url 'product_detail' %}" class="back-link">Back to product detail</a>
+
 </body>
 </html>
